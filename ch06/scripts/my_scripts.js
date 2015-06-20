@@ -74,10 +74,25 @@ $(document).ready(function() {
         cards: [],
         currentTotal: 0,
         sumCardTotal: function() {
-            this.currentTotal = cards.reduce(function(currentTotal,card) {
+            this.currentTotal = this.cards.reduce(function(currentTotal,card) {
                 return currentTotal + card.value;
             }, 0);
             $("#hdrTotal").html("Total:" + this.currentTotal);
+            if (this.currentTotal > 21) {
+                $("#btnStick").trigger("click");
+                $("#imgResult").attr('src', '../images/x2.png');
+                $("#hdrResult").html("BUST!").attr('class', 'lose');
+            } else if (this.currentTotal == 21) {
+                $("#btnStick").trigger("click");
+                $("#imgResult").attr('src', '../images/check.png');
+                $("#hdrResult").html("BlackJack!").attr('class', 'win');
+            } else if (this.currentTotal <= 21 && this.cards.length == 5) {
+                $("#btnStick").trigger("click");
+                $("#imgResult").attr('src', '../images/check.png');
+                $("#hdrResult").html("BlackJack - 5 cards trick!").attr('class', 'win');
+            } else {
+                //keep playing!
+            }
         }
     };
 
@@ -109,11 +124,42 @@ $(document).ready(function() {
             }
         } while (!good_card);
         good_card = false;
+        hand.sumCardTotal();
+    }
+
+    function end(){
+        $("#btnHit").toggle();
+        $("#btnStick").toggle();
+        $("#btnRestart").toggle();
     }
 
     $("#btnDeal").click(function() {
         deal();
         $(this).toggle();
+        $("#btnHit").toggle();
+        $("#btnStick").toggle();
+    });
+
+    $("#btnHit").click(function() {
+        hit();
+    });
+
+    $("#btnStick").click(function() {
+        $("#hdrResult").html("Stick!").attr('class', 'win');
+        $("#result").toggle();
+        end();
+    });
+
+    $("#btnRestart").click(function() {
+        $("#result").toggle();
+        $(this).toggle();
+        $("#my_hand").empty();
+        $("#hdrResult").html('');
+        used_cards.length = 0;
+        hand.cards.length = 0;
+        hand.currentTotal = 0;
+
+        $("#btnDeal").toggle().trigger("click");
     })
 });
 
