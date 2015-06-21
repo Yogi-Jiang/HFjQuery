@@ -1,0 +1,92 @@
+body {
+    background-color: #000;
+    color: white;
+}
+
+/* Style for tabs */
+#main {
+    color: #111;
+    width: 500px;
+    margin: 8px auto;
+}
+
+#main > li, #main > ul > li {
+    list-style: none;
+    float: left;
+}
+
+#main ul a {
+    display: block;
+    padding: 6px 10px;
+    text-decoration: none!important;
+    margin: 1px 1px 1px 0;
+    color: #fff;
+    background: #444;
+}
+
+#main ul a:hover {
+    color: #fff;
+    background: #111;
+}
+
+#main ul a.selected {
+    margin-bottom: 0;
+    color: #000;
+    background: snow;
+    border-bottom: 1px solid snow;
+    cursor: default;
+}
+
+#main div {
+    padding: 10px 10px 8px 10px;
+    background: snow;
+    *padding-top: 3px;
+    *margin-top: -15px;
+    clear: left;
+    height: 300px;
+}
+
+#main div a {
+    color: #000;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

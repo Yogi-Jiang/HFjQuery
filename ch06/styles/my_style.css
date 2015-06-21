@@ -34,8 +34,10 @@ h3 {
 	position:absolute;
 	top: 100px;
 	left: 20px;
+
 }
 #result > img {
 	width: 500px;
 	height: 250px;
+    border: none;
 }

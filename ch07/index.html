@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Monster Mashup</title>
+    <link rel="stylesheet" href="styles/my_style.css">
+</head>
+<body>
+    <header id="top">
+        <img src="images/Monster_Mashup.png">
+        <button id="mix">随机混搭</button>
+        <button id="restart">重置</button>
+        <p>点击照片，创造属于你自己的怪物混搭！</p>
+    </header>
+    <div id="container">
+        <img src="images/lightning-01.jpg" id="lightning1" class="lightning">
+        <img src="images/lightning-02.jpg" id="lightning2" class="lightning">
+        <img src="images/lightning-03.jpg" id="lightning3" class="lightning">
+        <div id="frame">
+            <div id="pic_box">
+                <div id="head" class="face"><img src="images/headsstrip.jpg"> </div>
+                <div id="eyes" class="face"><img src="images/eyesstrip.jpg"> </div>
+                <div id="nose" class="face"><img src="images/nosesstrip.jpg"> </div>
+                <div id="mouth" class="face"><img src="images/mouthsstrip.jpg"> </div>
+            </div>
+        </div>
+    </div>
+    <script src="../scripts/jquery-1.11.3.min.js"></script>
+    <script src="scripts/my_script.js"></script>
+</body>
+</html>

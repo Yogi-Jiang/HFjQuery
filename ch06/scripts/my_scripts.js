@@ -77,19 +77,19 @@ $(document).ready(function() {
             this.currentTotal = this.cards.reduce(function(currentTotal,card) {
                 return currentTotal + card.value;
             }, 0);
-            $("#hdrTotal").html("Total:" + this.currentTotal);
+            $("#hdrTotal").html("总点数:" + this.currentTotal);
             if (this.currentTotal > 21) {
                 $("#btnStick").trigger("click");
-                $("#imgResult").attr('src', '../images/x2.png');
-                $("#hdrResult").html("BUST!").attr('class', 'lose');
+                $("#imgResult").attr('src', '../ch06/images/x2.png');
+                $("#hdrResult").html("超过21点！你输了!").attr('class', 'lose');
             } else if (this.currentTotal == 21) {
                 $("#btnStick").trigger("click");
-                $("#imgResult").attr('src', '../images/check.png');
-                $("#hdrResult").html("BlackJack!").attr('class', 'win');
+                $("#imgResult").attr('src', '../ch06/images/check.png');
+                $("#hdrResult").html("21点!你赢了！").attr('class', 'win');
             } else if (this.currentTotal <= 21 && this.cards.length == 5) {
                 $("#btnStick").trigger("click");
-                $("#imgResult").attr('src', '../images/check.png');
-                $("#hdrResult").html("BlackJack - 5 cards trick!").attr('class', 'win');
+                $("#imgResult").attr('src', '../ch06/images/check.png');
+                $("#hdrResult").html("你赢了!").attr('class', 'win');
             } else {
                 //keep playing!
             }
@@ -145,8 +145,9 @@ $(document).ready(function() {
     });
 
     $("#btnStick").click(function() {
-        $("#hdrResult").html("Stick!").attr('class', 'win');
         $("#result").toggle();
+        $("#imgResult").attr('src', '../ch06/images/check.png');
+        $("#hdrResult").html("Stick!").attr('class', 'win');
         end();
     });
 
@@ -158,8 +159,7 @@ $(document).ready(function() {
         used_cards.length = 0;
         hand.cards.length = 0;
         hand.currentTotal = 0;
-
-        $("#btnDeal").toggle().trigger("click");
+        $("#btnDeal").trigger("click").toggle();
     })
 });
 
