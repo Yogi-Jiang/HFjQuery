@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Submit Your Cryptid Sighting</title>
+    <link rel="stylesheet" href="../plug_ins/jquery-ui-1.11.4.custom/jquery-ui.min.css">
+    <link rel="stylesheet" href="styles/my_style.css">
+</head>
+<body>
+    <div>
+        <h2>Submit Your Cryptid Sighting</h2>
+        <h3>Fill out the form below and click "Enter" to Submit</h3>
+    </div>
+    <form id="form" name="form" method="post" action="sightings.phs">
+        <div>
+            <h3>CRYPTID SIGHTING DATA</h3>
+        </div>
+        <div>
+            <h3>Date of Sighting:</h3>
+                <input type="text" name="sighting_date" id="datepicker">
+            <h3>Creature Type:</h3>
+            <div id="type_select">
+                <input type="radio" id="radio1" name="creature_type">
+                    <label for="radio1">Chupacabras</label>
+                <input type="radio" id="radio2" name="creature_type">
+                    <label for="radio2">Jersey Devil</label>
+                <input type="radio" id="radio3" name="creature_type">
+                    <label for="radio3">Loch Ness Monster</label>
+                <input type="radio" id="radio4" name="creature_type">
+                    <label for="radio4">Sasquatch</label>
+                <input type="radio" id="radio5" name="creature_type">
+                <label for="radio5">Yeti</label>
+                <input type="radio" id="radio6" name="creature_type">
+                <label for="radio6">Other</label>
+            </div>
+            <h3>Distance from Creature (in ft.):</h3>
+            <h3>Creature Weight (in lbs.):</h3>
+            <h3>Creature Height (in ft.):</h3>
+            <h3>Color of Creature:</h3>
+        </div>
+        <div>
+            <h3>CRYPTID LOCATION DATA</h3>
+        </div>
+        <div>
+            <h3>Latitude of Sighting:</h3>
+            <h3>Longitude of Sighting:</h3>
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+    <script src="../scripts/jquery-1.11.3.min.js"></script>
+    <script src="../plug_ins/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="scripts/my_script.js"></script>
+</body>
+</html>
