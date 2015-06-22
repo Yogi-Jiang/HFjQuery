@@ -3,12 +3,16 @@
  */
 $(document).ready(function() {
     var FREQ = 10000;
+    var repeat = true;
+    var int1;
 
     function startAjaxcalls() {
-        setTimeout(function() {
-            getXMLRacers();
-            startAjaxcalls();
-        }, FREQ);
+        if (repeat) {
+            int1 = setTimeout(function() {
+                getXMLRacers();
+                startAjaxcalls();
+            }, FREQ);
+        };
     }
 
     function getXMLRacers() {
@@ -52,6 +56,18 @@ $(document).ready(function() {
 
     getXMLRacers();
     startAjaxcalls();
+
+    $("#btnStop").click(function() {
+        repeat = false;
+        clearTimeout(int1);
+        $("#freq").html("Updates paused.");
+    });
+
+    $("#btnStart").click(function() {
+        repeat = true;
+        startAjaxcalls();
+        showFrequency();
+    })
 })
 
 
