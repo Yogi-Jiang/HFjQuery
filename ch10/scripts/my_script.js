@@ -59,6 +59,33 @@ $(document).ready(function() {
         }
     });
 
+    $("#red, #green, #blue").slider({
+        orientation: "horizontal",
+        value: 127,
+        range: "min",
+        max: 255,
+        slide: refreshSwatch,
+        change: refreshSwatch
+    });
+
+    function refreshSwatch() {
+        var red = $("#red").slider("value");
+        var green = $("#green").slider("value");
+        var blue = $("#blue").slider("value");
+        var my_rgb = "rgb(" + red + "," + green + "," + blue + ")";
+        $("#swatch").css("background-color", my_rgb);
+        $("#red_val").val(red);
+        $("#green_val").val(green);
+        $("#blue_val").val(blue);
+
+    }
+
+    $("#red").slider("value", 127);
+    $("#green").slider("value", 127);
+    $("#blue").slider("value", 127);
+
+    $("button:submit").button();
+
 });
 
 
