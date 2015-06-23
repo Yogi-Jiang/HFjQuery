@@ -7,15 +7,15 @@
     <link rel="stylesheet" href="styles/my_style.css">
 </head>
 <body>
-    <div>
+    <div class="ui-widget-header ui-corner-top form_pad">
         <h2>Submit Your Cryptid Sighting</h2>
         <h3>Fill out the form below and click "Enter" to Submit</h3>
     </div>
     <form id="form" name="form" method="post" action="sightings.phs">
-        <div>
+        <div class="ui-widget-content form_pad">
             <h3>CRYPTID SIGHTING DATA</h3>
         </div>
-        <div>
+        <div class="ui-widget-content form_pad">
             <h3>Date of Sighting:</h3>
                 <input type="text" name="sighting_date" id="datepicker">
             <h3>Creature Type:</h3>
@@ -34,18 +34,28 @@
                 <label for="radio6">Other</label>
             </div>
             <h3>Distance from Creature (in ft.):</h3>
+            <input type="text" id="distance" class="just_display" name="creature_distance" readonly="readonly">
+                <div id="slide_dist"></div>
             <h3>Creature Weight (in lbs.):</h3>
+            <input type="text" id="weight" class="just_display" name="creature_weight" readonly="readonly">
+                <div id="slide_weight"></div>
             <h3>Creature Height (in ft.):</h3>
+            <input type="text" id="height" class="just_display" name="creature_height" readonly="readonly">
+                <div id="slide_height"></div>
             <h3>Color of Creature:</h3>
         </div>
-        <div>
+        <div class="ui-widget-content form_pad">
             <h3>CRYPTID LOCATION DATA</h3>
         </div>
-        <div>
+        <div class="ui-widget-content form_pad">
             <h3>Latitude of Sighting:</h3>
+            <input type="text" id="latitude" class="just_display" name="creature_latitude" readonly="readonly">
+                <div id="slide_latitude"></div>
             <h3>Longitude of Sighting:</h3>
+            <input type="text" id="longitude" class="just_display" name="creature_longitude" readonly="readonly">
+                <div id="slide_longitude"></div>
         </div>
-        <div>
+        <div class="ui-widget-header ui-corner-bottom form_pad">
             <button type="submit">Submit</button>
         </div>
     </form>
@@ -54,3 +64,65 @@
     <script src="scripts/my_script.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
