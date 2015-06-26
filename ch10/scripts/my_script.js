@@ -86,6 +86,23 @@ $(document).ready(function() {
 
     $("button:submit").button();
 
+    $("#btnSave").click(function() {
+        var data = $("#frmAddSighting :input").serializeArray();
+        $.post($("#frmAddSighting").attr("action"), data, function(json) {
+            if (json.status == "fail") {
+                alert(json.message);
+            } else if (json.status == "success") {
+                alert(json.message);
+            } else {
+                alert("Nothing Happened.");
+            }
+        }, "json");
+    });
+
+    $("#frmAddSighting").submit(function() {
+        return false;
+    })
+
 });
 
 
